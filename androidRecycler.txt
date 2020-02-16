@@ -1,0 +1,75 @@
+package com.ayu.contacts;
+
+import android.os.Bundle;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class RecyclerActivity extends AppCompatActivity {
+
+    RecyclerView recyclerView;
+    RecyclerAdapter recyclerAdapter;
+    List<Contacts> contactlists;
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_recycler);
+        recyclerView = findViewById(R.id.recyclerID);
+        addContact();
+        initRecyclerViews();
+
+    }
+
+    private void initRecyclerViews() {
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getBaseContext());
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerAdapter=new RecyclerAdapter(getBaseContext(),contactlists);
+
+
+        recyclerView.setAdapter(recyclerAdapter);
+     //   studyOptionsRecycler = new ResourcesRecycler(resourcesPojos, getBaseContext(),nested_scroll_view,recyclerView,headerName);
+        //  recyclerView.setAdapter(studyOptionsRecycler);
+    }
+
+    public void addContact()
+    {
+        Contacts contact1=new Contacts("Ayush",89374982,"Dhumbarahi");
+        Contacts contact2=new Contacts("Ram",89374982,"Dhumbarahi");
+        Contacts contact3=new Contacts("Hari",89374982,"Dhumbarahi");
+        Contacts contact4=new Contacts("Sam",89374982,"Dhumbarahi");
+        Contacts contact5=new Contacts("Ayush",89374982,"Dhumbarahi");
+        Contacts contact6=new Contacts("Ram",89374982,"Dhumbarahi");
+        Contacts contact7=new Contacts("Hari",89374982,"Dhumbarahi");
+        Contacts contact8=new Contacts("Sam",89374982,"Dhumbarahi");
+        Contacts contact9=new Contacts("Ayush",89374982,"Dhumbarahi");
+        Contacts contact10=new Contacts("Ram",89374982,"Dhumbarahi");
+        Contacts contact11=new Contacts("Hari",89374982,"Dhumbarahi");
+        Contacts contact12=new Contacts("Sam",89374982,"Dhumbarahi");
+        Contacts contact13=new Contacts("Ayush",89374982,"Dhumbarahi");
+        Contacts contact14=new Contacts("Ram",89374982,"Dhumbarahi");
+
+
+        contactlists=new ArrayList<>();
+
+        contactlists.add(contact1);
+        contactlists.add(contact2);
+        contactlists.add(contact3);
+        contactlists.add(contact4);
+        contactlists.add(contact5);
+        contactlists.add(contact6);
+        contactlists.add(contact7);
+        contactlists.add(contact8);
+        contactlists.add(contact9);
+        contactlists.add(contact10);
+        contactlists.add(contact11);
+        contactlists.add(contact12);
+        contactlists.add(contact13);
+        contactlists.add(contact14);
+    }
+
+}
